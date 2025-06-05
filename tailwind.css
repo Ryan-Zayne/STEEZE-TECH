@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* ------------------*/
+/* App Color Theme         */
+/*-------------------*/
+/* @theme {
+	--color-app-dark: hsl(0, 0%, 4%);
+	--color-app-dark-2: hsl(0, 0%, 9%);
+	--color-app-light: hsl(0, 0%, 100%);
+	--color-app-dark-blue: hsl(230, 46%, 5%);
+	--color-app-gray: hsl(0, 0%, 62%);
+} */
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* ------------------*/
+/* Custom Properties */
+/*-------------------*/
+@layer base {
+}
+
+/* ------------------*/
+/* Fonts */
+/*-------------------*/
+/* @theme inline {
+	--font-inter: var(--font-inter);
+	--font-albert-sans: var(--font-albert-sans);
+} */
+
+/* ------------------*/
+/* Main Theme */
+/*-------------------*/
+@theme {
+	--breakpoint-*: initial;
+	--breakpoint-sm: 480px;
+	--breakpoint-md: 780px;
+	--breakpoint-lg: 1000px;
+	--breakpoint-xl: 1280px;
+}
+
+/* ------------------*/
+/* General CSS Reset */
+/*-------------------*/
+@layer base {
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		height: 100%;
+	}
+
+	body {
+		min-height: 100%;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		-webkit-tap-highlight-color: transparent;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	input:focus-visible {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+	}
+
+	img {
+		width: 100%;
+		max-inline-size: 100%;
+		max-width: unset;
+	}
+
+	button:not(:disabled) {
+		cursor: pointer;
+	}
+
+	button {
+		outline: transparent;
+	}
+
+	body {
+		line-height: 1.5;
+		font-family: var(--font-inter);
+		color: var(--color-app-light);
+	}
+}
+
+/* ------------------*/
+/* Custom Utilities */
+/*-------------------*/
+@utility custom-scrollbar {
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: hsl(0, 0%, 76%);
+		border-radius: 10px 10px 0 0;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: hsl(0, 0%, 39%);
+		border: 1px solid hsl(0, 0%, 76%);
+		border-radius: 10px;
+	}
+}
+
+@utility scrollbar-hidden {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
