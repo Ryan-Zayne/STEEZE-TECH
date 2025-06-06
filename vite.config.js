@@ -10,8 +10,4 @@ export default defineConfig({
 			input: ["index.html", "signin.html", "signup.html", "reset-password.html"]
 		}
 	},
-	server: {
-		open: '/index.html'
-	},
-	base: '/'
 });
