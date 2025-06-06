@@ -1,6 +1,7 @@
 {
 	"name": "steeze-tech",
 	"private": true,
+	"packageManager": "pnpm@9.15.4",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
