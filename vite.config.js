@@ -6,5 +6,16 @@ export default defineConfig({
 	build: {
 		outDir: "output",
 		minify: false,
+		rollupOptions: {
+			input: {
+				index: 'index.html',
+				signup: 'signup.html',
+				signin: 'signin.html'
+			}
+		}
 	},
+	server: {
+		open: '/index.html'
+	},
+	base: '/'
 });
