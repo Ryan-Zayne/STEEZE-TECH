@@ -7,11 +7,7 @@ export default defineConfig({
 		outDir: "output",
 		minify: false,
 		rollupOptions: {
-			input: {
-				index: 'index.html',
-				signup: 'signup.html',
-				signin: 'signin.html'
-			}
+			input: ["index.html", "signin.html", "signup.html", "reset-password.html"]
 		}
 	},
 	server: {
