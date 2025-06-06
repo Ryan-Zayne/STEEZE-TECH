@@ -1,0 +1,6 @@
+dist
+pnpm-lock.yaml
+*.md
+*.tsbuildinfo
+.eslintcache
+output
