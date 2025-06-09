@@ -738,6 +738,10 @@
     width: calc(var(--spacing) * 16);
   }
 
+  .w-\[200px\] {
+    width: 200px;
+  }
+
   .w-full {
     width: 100%;
   }
