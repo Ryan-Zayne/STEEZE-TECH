@@ -1,0 +1,26 @@
+{
+	"name": "steeze-tech",
+	"type": "module",
+	"version": "0.0.0",
+	"private": true,
+	"packageManager": "pnpm@9.15.4",
+	"scripts": {
+		"build": "vite build",
+		"dev": "vite",
+		"lint:eslint": "eslint . --max-warnings 0",
+		"lint:format": "prettier --write .",
+		"prepare": "husky",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@zayne-labs/prettier-config": "^0.9.1",
+		"glob": "^11.0.2",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.0",
+		"prettier": "^3.5.3",
+		"prettier-plugin-classnames": "^0.7.8",
+		"prettier-plugin-merge": "^0.7.4",
+		"prettier-plugin-tailwindcss": "^0.6.12",
+		"vite": "^6.3.5"
+	}
+}
