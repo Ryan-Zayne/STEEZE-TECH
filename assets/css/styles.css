@@ -10154,7 +10154,7 @@ Primary style
   display: block;
 }
 .logo a img {
-  max-height: 50px;
+  max-height: 80px;
   object-fit: cover;
 }
 
@@ -11522,7 +11522,7 @@ ul.rbt-dropdown-menu.currency-menu li .sub-menu {
   z-index: 99;
 }
 .rbt-header .logo a img {
-  max-height: 50px;
+  max-height: 70px;
   object-fit: cover;
 }
 @media only screen and (max-width: 575px) {
@@ -12430,13 +12430,13 @@ ul.rbt-dropdown-menu.currency-menu li .sub-menu {
 }
 .popup-mobile-menu .mainmenu .has-menu-child-item > a::after,
 .popup-mobile-menu .mainmenu .has-dropdown > a::after {
-  position: absolute;
+  /* position: absolute;
   content: "\e9b1";
   font-family: "feather" !important;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  transition: 0.4s;
+  transition: 0.4s; */
 }
 .popup-mobile-menu .mainmenu .has-menu-child-item > a.open::after,
 .popup-mobile-menu .mainmenu .has-dropdown > a.open::after {
@@ -13687,6 +13687,9 @@ a.rbt-moderbt-btn {
   display: inline-block;
   z-index: 1;
   color: var(--color-heading);
+}
+a.rbt-moderbt-btn.top{
+ top: 40px;
 }
 @media only screen and (max-width: 767px) {
   a.rbt-moderbt-btn {
@@ -21024,7 +21027,7 @@ span.transparent-button:hover i {
 .form-group {
   position: relative;
   z-index: 2;
-  margin-bottom: 30px;
+  margin-bottom: 57px;
   display: block;
 }
 .form-group label {
