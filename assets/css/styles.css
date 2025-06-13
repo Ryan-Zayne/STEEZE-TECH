@@ -835,7 +835,7 @@ p.has-large-font-size {
   }
 }
 p.has-medium-font-size {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 36px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -21027,7 +21027,7 @@ span.transparent-button:hover i {
 .form-group {
   position: relative;
   z-index: 2;
-  margin-bottom: 57px;
+  margin-bottom: 29px;
   display: block;
 }
 .form-group label {
