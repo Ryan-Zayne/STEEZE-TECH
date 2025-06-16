@@ -1,7 +1,7 @@
 {
-	"name": "SteezTech",
-	"short_name": "SteezTech",
-	"description": "SteezTech education platform",
+	"name": "SteezeTech",
+	"short_name": "SteezeTech",
+	"description": "SteezeTech education platform",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",

@@ -1,7 +1,7 @@
 const cacheName = "steeze-tech-v1"; //the name of our cache
 const cacheAsset = [""]; //this is the asset that we want to cache
 
-// Simple service worker for SteezTech PWA
+// Simple service worker for SteezeTech PWA
 self.addEventListener("install", (event) => {
 	console.log("Service Worker installed");
 

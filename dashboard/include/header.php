@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
-		<title>Student Dashboard - SteezTech</title>
+		<title>Student Dashboard - SteezeTech</title>
 		<meta name="robots" content="noindex, follow" />
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -50,7 +50,7 @@
 									<div class="rbt-default-sidebar-wrapper">
 										<div class="logo dashboard-logo mb--10 d-flex justify-content-between align-items-center">
 											<a href="index.html">
-												<img src="../assets/images/logo/logo.png" alt="SteezTech Logo" />
+												<img src="../assets/images/logo/logo.png" alt="SteezeTech Logo" />
 											</a>
 
 											<button class="dashboard-close" id="side-close">
