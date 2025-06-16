@@ -1,0 +1,45 @@
+/* Sidebar toggle styles */
+.dashboard-sidenav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	z-index: 1000;
+	transition: transform 0.3s ease;
+	transform: translateX(-100%);
+	background: #fff;
+}
+
+.dashboard-sidenav.active {
+	transform: translateX(0);
+}
+
+#side-toggle {
+	border: none;
+	background: none;
+	font-size: 24px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#side-close {
+	border: none;
+	background: none;
+	font-size: 24px;
+	padding: 5px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+@media (min-width: 992px) {
+	.dashboard-sidenav {
+		position: relative;
+		transform: none;
+	}
+
+	#side-close {
+		display: none;
+	}
+}
