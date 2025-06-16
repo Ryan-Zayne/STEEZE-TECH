@@ -36,6 +36,6 @@ window.addEventListener("beforeinstallprompt", (e) => {
 		console.log(`User response to the install prompt: ${outcome}`);
 
 		// Hide the install button
-		installButton.remove();
+		// installButton.remove();
 	});
 });
