@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -8,10 +8,16 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
-		<link rel="manifest" href="manifest.webmanifest" />
+		<!-- PWA related tags -->
 		<meta name="theme-color" content="#ffffff" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="apple-mobile-web-app-title" content="SteezTech" />
+		
+		<!-- Favicon and Icons -->
+		<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+		<link rel="apple-touch-icon" href="assets/images/logo/logo-black.png" />
+		<link rel="manifest" href="manifest.json" />
 
 		<!-- CSS
 		============================================ -->
@@ -30,7 +36,7 @@
 		<link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css" />
 		<link rel="stylesheet" href="assets/css/plugins/plyr.css" />
 		<link rel="stylesheet" href="assets/css/plugins/jodit.min.css" />
-
+		<link rel="stylesheet" href="assets/css/pwa.css" />
 		<link rel="stylesheet" href="assets/css/styles.css" />
 	</head>
 
@@ -70,7 +76,10 @@
 
 							<div class="logo d-none logo-light">
 								<a href="index.html">
-									<img src="assets/images/dark/logo/logo-light.png" alt="SteezTech Logo Images" />
+									<img
+										src="assets/images/dark/logo/logo-light.png"
+										alt="SteezTech Logo Images"
+									/>
 								</a>
 							</div>
 						</div>
@@ -143,7 +152,10 @@
 
 							<div class="logo d-none logo-light">
 								<a href="index.html">
-									<img src="assets/images/dark/logo/logo-light.png" alt="SteezTech Logo Images" />
+									<img
+										src="assets/images/dark/logo/logo-light.png"
+										alt="SteezTech Logo Images"
+									/>
 								</a>
 							</div>
 						</div>
@@ -151,7 +163,9 @@
 							<button class="close-button rbt-round-btn"><i class="feather-x"></i></button>
 						</div>
 					</div>
-					<p class="description">SteezTech is a education website Platform. You can customize all.</p>
+					<p class="description">
+						SteezTech is a education website Platform. You can customize all.
+					</p>
 					<ul class="navbar-top-left rbt-information-list justify-content-start">
 						<li>
 							<a href="mailto:hello@example.com"><i class="feather-mail"></i>example@gmail.com</a>
@@ -194,8 +208,7 @@
 					<!-- Enroll -->
 					<div class="rbt-btn-wrapper mb--20">
 						<a
-							class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100
-								justify-content-center text-center"
+							class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
 							href="register.html"
 						>
 							<span>Enroll Now</span>
@@ -206,8 +219,7 @@
 					<div class="social-share-wrapper">
 						<span class="rbt-short-title d-block">Find With Us</span>
 						<ul
-							class="social-icon social-default transparent-with-border justify-content-start
-								mt--20"
+							class="social-icon social-default transparent-with-border justify-content-start mt--20"
 						>
 							<li>
 								<a href="https://www.facebook.com/">
@@ -244,7 +256,9 @@
 							<h4 class="title mb--0">Your shopping cart</h4>
 						</div>
 						<div class="rbt-btn-close" id="btn_sideNavClose">
-							<button class="minicart-close-button rbt-round-btn"><i class="feather-x"></i></button>
+							<button class="minicart-close-button rbt-round-btn">
+								<i class="feather-x"></i>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -460,8 +474,7 @@
 									>Making Sensitive Clients More Valuable For Companies Like</span
 								>
 								<ul
-									class="brand-list brand-style-3 justify-content-start justify-content-lg-between
-										mt--30"
+									class="brand-list brand-style-3 justify-content-start justify-content-lg-between mt--30"
 								>
 									<li>
 										<a href="#"
@@ -1140,8 +1153,7 @@
 												alt="Video Images"
 											/>
 											<a
-												class="rbt-btn rounded-player-2 sm-size popup-video position-to-top
-													with-animation"
+												class="rbt-btn rounded-player-2 sm-size popup-video position-to-top with-animation"
 												href="https://www.youtube.com/watch?v=nA1Aqp0sPQo"
 											>
 												<span class="play-icon"></span>
@@ -1965,8 +1977,7 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div
-								class="swiper event-activation-1 rbt-arrow-between rbt-dot-bottom-center pb--60
-									icon-bg-primary"
+								class="swiper event-activation-1 rbt-arrow-between rbt-dot-bottom-center pb--60 icon-bg-primary"
 							>
 								<div class="swiper-wrapper">
 									<!-- Start Single Slide  -->
@@ -1998,8 +2009,7 @@
 
 													<div class="read-more-btn">
 														<a
-															class="rbt-btn btn-border hover-icon-reverse btn-sm
-																radius-round"
+															class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
 															href="javascript:void(0)"
 														>
 															<span class="icon-reverse-wrapper">
@@ -2047,8 +2057,7 @@
 
 													<div class="read-more-btn">
 														<a
-															class="rbt-btn btn-border hover-icon-reverse btn-sm
-																radius-round"
+															class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
 															href="javascript:void(0)"
 														>
 															<span class="icon-reverse-wrapper">
@@ -2097,8 +2106,7 @@
 
 													<div class="read-more-btn">
 														<a
-															class="rbt-btn btn-border hover-icon-reverse btn-sm
-																radius-round"
+															class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
 															href="javascript:void(0)"
 														>
 															<span class="icon-reverse-wrapper">
@@ -2147,8 +2155,7 @@
 
 													<div class="read-more-btn">
 														<a
-															class="rbt-btn btn-border hover-icon-reverse btn-sm
-																radius-round"
+															class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
 															href="javascript:void(0)"
 														>
 															<span class="icon-reverse-wrapper">
@@ -2201,8 +2208,8 @@
 									<span class="subtitle bg-white-opacity">Get Latest SteezTech Update</span>
 									<h2 class="title color-white"><strong>Subscribe</strong> Our Newsletter</h2>
 									<p class="description color-white mt--20">
-										Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam explicabo sit
-										est eos earum reprehenderit inventore nam autem corrupti rerum!
+										Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam explicabo
+										sit est eos earum reprehenderit inventore nam autem corrupti rerum!
 									</p>
 								</div>
 								<form action="#" class="newsletter-form-1 mt--40">
@@ -2215,7 +2222,9 @@
 										</span>
 									</button>
 								</form>
-								<span class="note-text color-white mt--20">No ads, No trails, No commitments</span>
+								<span class="note-text color-white mt--20"
+									>No ads, No trails, No commitments</span
+								>
 
 								<div class="row row--15 mt--50">
 									<!-- Start Single Counter -->
@@ -2407,8 +2416,7 @@
 						</div>
 						<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-12">
 							<ul
-								class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end
-									mt_sm--10 mt_md--10"
+								class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10"
 							>
 								<li><a href="#">Terms of service</a></li>
 								<li><a href="#">Privacy policy</a></li>
@@ -2462,6 +2470,7 @@
 		<script src="assets/js/vendor/plyr.js"></script>
 		<script src="assets/js/vendor/jodit.min.js"></script>
 		<script src="assets/js/vendor/Sortable.min.js"></script>
+		<script src="assets/js/pwa.js"></script>
 
 		<!-- Main JS -->
 		<script src="assets/js/main.js"></script>
