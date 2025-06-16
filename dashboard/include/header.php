@@ -9,29 +9,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 		<!-- Favicon & Manifest -->
-		<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
-		<link rel="manifest" href="manifest.json" />
+		<link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.png" />
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css" />
-		<link rel="stylesheet" href="../../assets/css/vendor/slick.css" />
-		<link rel="stylesheet" href="../../assets/css/vendor/slick-theme.css" />
-		<link rel="stylesheet" href="../../assets/css/app.min.css" />
-		<link rel="stylesheet" href="../../assets/css/icons.min.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/sal.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/feather.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/fontawesome.min.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/euclid-circulara.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/swiper.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/odometer.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/animation.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/bootstrap-select.min.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/jquery-ui.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/magnigy-popup.min.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/plyr.css" />
-		<link rel="stylesheet" href="../../assets/css/plugins/jodit.min.css" />
-		<link rel="stylesheet" href="../../assets/css/sidebar.css" />
-		<link rel="stylesheet" href="../../assets/css/styles.css" />
+		<link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css" />
+		<link rel="stylesheet" href="../assets/css/vendor/slick.css" />
+		<link rel="stylesheet" href="../assets/css/vendor/slick-theme.css" />
+		<link rel="stylesheet" href="../assets/css/app.min.css" />
+		<link rel="stylesheet" href="../assets/css/icons.min.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/sal.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/feather.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/fontawesome.min.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/euclid-circulara.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/swiper.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/odometer.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/animation.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/bootstrap-select.min.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/jquery-ui.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/magnigy-popup.min.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/plyr.css" />
+		<link rel="stylesheet" href="../assets/css/plugins/jodit.min.css" />
+		<link rel="stylesheet" href="../assets/css/sidebar.css" />
+		<link rel="stylesheet" href="../assets/css/styles.css" />
 		<!-- <link rel="stylesheet" href="assets/css/pwa.css" /> -->
 	</head>
 
@@ -51,7 +50,7 @@
 									<div class="rbt-default-sidebar-wrapper">
 										<div class="logo dashboard-logo mb--10 d-flex justify-content-between align-items-center">
 											<a href="index.html">
-												<img src="../../assets/images/logo/logo.png" alt="SteezTech Logo" />
+												<img src="../assets/images/logo/logo.png" alt="SteezTech Logo" />
 											</a>
 
 											<button class="dashboard-close" id="side-close">
