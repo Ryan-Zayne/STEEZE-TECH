@@ -10,6 +10,7 @@
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+		<script src="https://esm.run/@tailwindcss/browser@4"></script>
 
 		<!-- CSS
 	============================================ -->
@@ -62,7 +63,7 @@
 					</div>
 				</div>
 
-				<div class="row row row--30">
+				<!-- <div class="row row row--30">
 					<div class="col-lg-12 mt_md--40 mt_sm--10 order-lg-1 order-2">
 						<div class="advance-tab-button">
 							<ul class="nav nav-tabs tab-button-style-2" id="myTab-4" role="tablist">
@@ -153,7 +154,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 				<div class="row pt--60 g-5">
 					<div class="col-lg-4">
@@ -234,13 +235,15 @@
 								<div class="col-lg-12">
 									<div class="form-group">
 										<label for="registration_type">Registration Type</label>
-										<div class="rbt-modern-select height-45 bg-transparent">
-											<select id="registration_type" name="registration_type" class="w-100">
-												<option value="student" selected>
-													Register for Courses (Student)
-												</option>
-												<option value="instructor">Register as Instructor</option>
-												<option value="affiliate">Register as Affiliate</option>
+										<div class="rbt-modern-select height-45">
+											<select
+												id="registration_type"
+												name="registration_type"
+												class="w-100 !text-black/80"
+											>
+												<option value="student" selected>Register as a Student</option>
+												<option value="instructor">Register as an Instructor</option>
+												<option value="affiliate">Register as an Affiliate</option>
 											</select>
 										</div>
 										<span class="focus-border"></span>
