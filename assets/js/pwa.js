@@ -1,3 +1,6 @@
+// Store the deferred prompt for later use
+var deferredPrompt;
+
 if ("serviceWorker" in navigator) {
 	window.addEventListener("load", () => {
 		navigator.serviceWorker
@@ -13,12 +16,14 @@ if ("serviceWorker" in navigator) {
 
 // Listen for the beforeinstallprompt event
 window.addEventListener("beforeinstallprompt", (e) => {
+	console.log("beforeinstallprompt event fired");
 	// Prevent Chrome 67 and earlier from automatically showing the prompt
 	e.preventDefault();
-	// Stash the event so it can be triggered later
+
+	// Store the event for later use
+	deferredPrompt = e;
 
 	// Show install button or notification to user
-	// Create install button
 	const installButton = document.getElementById("pwa-install-button");
 
 	if (!installButton) {
@@ -28,14 +33,26 @@ window.addEventListener("beforeinstallprompt", (e) => {
 
 	// Show the prompt when user clicks the button
 	installButton.addEventListener("click", async () => {
+		console.log("Install button clicked");
+
+		if (!deferredPrompt) {
+			console.error("No deferred prompt available");
+			return;
+		}
+
 		// Show the install prompt
-		e.prompt();
+		try {
+			await deferredPrompt.prompt();
+			console.log("Install prompt shown");
 
-		// Wait for the user to respond to the prompt
-		const { outcome } = await e.userChoice;
-		console.log(`User response to the install prompt: ${outcome}`);
+			// Wait for the user to respond to the prompt
+			const { outcome } = await deferredPrompt.userChoice;
+			console.log(`User response to the install prompt: ${outcome}`);
 
-		// Hide the install button
-		// installButton.remove();
+			// Clear the deferred prompt
+			deferredPrompt = null;
+		} catch (error) {
+			console.error("Error showing install prompt:", error);
+		}
 	});
 });
