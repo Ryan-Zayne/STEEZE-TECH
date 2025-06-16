@@ -1,20 +1,28 @@
 .pwa-install-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px 24px;
-    background-color: #4361ee;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: transform 0.2s ease;
+    margin-top: 20px;
+    transition: all 0.4s;
+    min-width: 200px;
+}
+
+.pwa-install-button .btn-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pwa-install-button .feather-download {
+    margin-left: 4px;
 }
 
 .pwa-install-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }

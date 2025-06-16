@@ -13,27 +13,41 @@ window.addEventListener("beforeinstallprompt", (e) => {
 
 // Function to show custom install prompt
 function showInstallPrompt() {
-	if (!deferredPrompt) return;
+    if (!deferredPrompt) return;
 
-	// Create a button or notification
-	const installButton = document.createElement("button");
-	installButton.textContent = "Install App";
-	installButton.classList.add("pwa-install-button");
-	document.body.appendChild(installButton);
+    // Find the install button container
+    const installContainer = document.getElementById('pwa-install-container');
+    if (!installContainer) {
+        console.warn('PWA install container not found');
+        return;
+    }
 
-	// Show the prompt when user clicks the button
-	installButton.addEventListener("click", async () => {
-		// Show the install prompt
-		deferredPrompt.prompt();
+    // Create install button
+    const installButton = document.createElement("button");
+    installButton.classList.add("pwa-install-button", "rbt-btn", "btn-md", "btn-gradient");
+    
+    const btnText = document.createElement("span");
+    btnText.className = "btn-text";
+    btnText.innerHTML = 'Install App <i class="feather-download"></i>';
+    
+    installButton.appendChild(btnText);
 
-		// Wait for the user to respond to the prompt
-		const { outcome } = await deferredPrompt.userChoice;
-		console.log(`User response to the install prompt: ${outcome}`);
+    // Add button to container
+    installContainer.appendChild(installButton);
 
-		// We've used the prompt, and can't use it again, discard it
-		deferredPrompt = null;
+    // Show the prompt when user clicks the button
+    installButton.addEventListener("click", async () => {
+        // Show the install prompt
+        deferredPrompt.prompt();
 
-		// Hide the install button
-		installButton.remove();
-	});
+        // Wait for the user to respond to the prompt
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log(`User response to the install prompt: ${outcome}`);
+
+        // We've used the prompt, and can't use it again, discard it
+        deferredPrompt = null;
+
+        // Hide the install button
+        installButton.remove();
+    });
 }
