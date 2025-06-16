@@ -143,14 +143,14 @@
           stepPrevBtnClass: 'rbt-step-btn-prev',
           stepNextBtnClass: 'rbt-step-btn-next',
         };
-      
+
         // Function to remove classes
         const removeClasses = (elemSet, className) => {
           elemSet.forEach(elem => {
             elem.classList.remove(className);
           });
         };
-      
+
         // Find parent of an element
         const findParent = (elem, parentClass) => {
           let currentNode = elem;
@@ -159,12 +159,12 @@
           }
           return currentNode;
         };
-      
+
         // Get active step
         const getActiveStep = elem => {
           return Array.from(DOMstrings.stepsBtns).indexOf(elem);
         };
-      
+
         // Set active step
         const setActiveStep = activeStepNum => {
           removeClasses(DOMstrings.stepsBtns, 'rbt-active');
@@ -174,7 +174,7 @@
             }
           });
         };
-      
+
         // Get active panel
         const getActivePanel = () => {
           let activePanel;
@@ -185,7 +185,7 @@
           });
           return activePanel;
         };
-      
+
         // Set active panel
         const setActivePanel = activePanelNum => {
           removeClasses(DOMstrings.stepFormPanels, 'rbt-active');
@@ -195,27 +195,27 @@
             }
           });
         };
-      
+
         // Add event listener to stepsBar
         if (DOMstrings.stepsBar) {
           DOMstrings.stepsBar.addEventListener('click', e => {
             const eventTarget = e.target;
-      
+
             if (!eventTarget.classList.contains(DOMstrings.stepsBtnClass)) {
               return;
             }
-      
+
             const activeStep = getActiveStep(eventTarget);
             setActiveStep(activeStep);
             setActivePanel(activeStep);
           });
         }
-      
+
         // Add event listener to stepsForm
         if (DOMstrings.stepsForm) {
           DOMstrings.stepsForm.addEventListener('click', e => {
             const eventTarget = e.target;
-      
+
             if (
               !(
                 eventTarget.classList.contains(DOMstrings.stepPrevBtnClass) ||
@@ -224,21 +224,21 @@
             ) {
               return;
             }
-      
+
             const activePanel = findParent(eventTarget, DOMstrings.stepFormPanelClass);
             let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
-      
+
             if (eventTarget.classList.contains(DOMstrings.stepPrevBtnClass)) {
               activePanelNum--;
             } else {
               activePanelNum++;
             }
-      
+
             setActiveStep(activePanelNum);
             setActivePanel(activePanelNum);
           });
         }
-      });      
+      });
     },
 
     cursorFollow: function () {
@@ -250,29 +250,29 @@
       if(container) {
         document.addEventListener("mousemove", (e) => {
           const rect = container.getBoundingClientRect();
-          
+
           mouseX = e.clientX - rect.left;
           mouseY = e.clientY - rect.top;
-  
+
           const maxX = rect.width - cursorFollower.offsetWidth / 2;
           const maxY = rect.height - cursorFollower.offsetHeight / 2;
           const minX = cursorFollower.offsetWidth / 2;
           const minY = cursorFollower.offsetHeight / 2;
-  
+
           mouseX = Math.max(minX, Math.min(mouseX, maxX));
           mouseY = Math.max(minY, Math.min(mouseY, maxY));
         });
-  
+
         function animateCursor() {
           xp += (mouseX - xp) * 0.1;
           yp += (mouseY - yp) * 0.1;
-  
+
           cursorFollower.style.left = `${xp}px`;
           cursorFollower.style.top = `${yp}px`;
-  
+
           requestAnimationFrame(animateCursor);
         }
-  
+
         animateCursor();
       }
 
@@ -1030,7 +1030,7 @@
     masonryActivation: function name(params) {
       $(window).load(function () {
         $(".masonary-wrapper-activation").imagesLoaded(function () {
-          // filter items on button click 
+          // filter items on button click
           $(".messonry-button").on("click", "button", function () {
             var filterValue = $(this).attr("data-filter");
             $(this).siblings(".is-checked").removeClass("is-checked");
@@ -1633,14 +1633,3 @@
 })(window, document, jQuery);
 
 // PWA Service Worker registration
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => {
-        console.log('Service Worker registered with scope:', reg.scope);
-      })
-      .catch(err => {
-        console.error('Service Worker registration failed:', err);
-      });
-  });
-}
