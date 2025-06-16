@@ -10,9 +10,9 @@
 
 		<!-- PWA related tags -->
 		<meta name="theme-color" content="#ffffff" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-		<meta name="apple-mobile-web-app-title" content="SteezTech" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-status-bar-style" content="default" />
+		<meta name="mobile-web-app-title" content="SteezTech" />
 
 		<!-- Favicon and Icons -->
 		<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
@@ -41,6 +41,22 @@
 	</head>
 
 	<body class="rbt-header-sticky">
+		<!-- PWA Install Notification -->
+		<div class="pwa-install-notification">
+			<button class="close-notification" aria-label="Close notification">
+				<i class="feather-x"></i>
+			</button>
+
+			<div class="notification-content d-flex justify-content-between align-items-center">
+				<div class="notification-text">
+					<p>Install SteezTech app for a better experience</p>
+				</div>
+				<div class="notification-actions">
+					<button id="pwa-install-button" class="rbt-btn btn-sm btn-gradient">Install App</button>
+				</div>
+			</div>
+		</div>
+
 		<div id="my_switcher" class="my_switcher">
 			<ul>
 				<li>
@@ -2049,38 +2065,6 @@
 			</div>
 			<!-- End Event Area  -->
 
-			<!-- Start App Install Section -->
-			<div class="rbt-app-install-area app-install-style-1 bg-color-primary rbt-section-gap d-md-none">
-				<div class="container">
-					<div class="row row--15 align-items-center">
-						<div class="col-lg-12">
-							<div class="inner text-center mb--60">
-								<div class="section-title text-center">
-									<span class="subtitle bg-white-opacity">Get the SteezTech App</span>
-									<h2 class="title color-white"><strong>Install</strong> Our Mobile App</h2>
-									<p class="description color-white mt--20">
-										Get instant access to our courses, track your progress, and learn on the go!
-										Install our app for the best learning experience.
-									</p>
-
-									<div id="pwa-install-container" class="mt--30">
-										<button
-											id="pwa-install-button"
-											class="pwa-install-button rbt-btn btn-md btn-gradient"
-										>
-											<span class="btn-text"
-												>Install App <i class="feather-download"></i
-											></span>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End App Install Section -->
-
 			<!-- Start Newsletter -->
 			<div class="rbt-newsletter-area newsletter-style-2 bg-color-primary rbt-section-gap">
 				<div class="container">
@@ -2356,7 +2340,6 @@
 		<script src="assets/js/vendor/plyr.js"></script>
 		<script src="assets/js/vendor/jodit.min.js"></script>
 		<script src="assets/js/vendor/Sortable.min.js"></script>
-		<script src="assets/js/pwa.js"></script>
 
 		<!-- Main JS -->
 		<script src="assets/js/main.js"></script>

@@ -1,28 +1,112 @@
-.pwa-install-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 12px 24px;
-	color: white;
-	border: none;
-	border-radius: 6px;
-	font-size: 16px;
-	cursor: pointer;
-	margin-top: 20px;
-	transition: all 0.4s;
-	min-width: 200px;
+/* PWA Install Button */
+
+
+#pwa-install-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
 }
 
-.pwa-install-button .btn-text {
+/* PWA Install Notification */
+.pwa-install-notification {
+	position: fixed;
+	top: 20px;
+	right: -300px; /* Start off-screen */
+	width: clamp(280px, 90vw, 340px);
+	background: var(--color-white);
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	z-index: 999;
+	display: none;
+	border: 1px solid var(--color-border);
+}
+
+.pwa-install-notification.active {
+	right: 20px;
+	display: block;
+}
+
+.notification-content {
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	position: relative;
+}
+
+.notification-text {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 12px;
 }
 
-.pwa-install-button .feather-download {
-	margin-left: 4px;
+
+.notification-text p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.4;
+	color: var(--color-heading);
+	font-weight: 500;
 }
 
-.pwa-install-button:hover {
-	transform: translateY(-2px);
+.notification-actions {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.close-notification {
+	position: absolute;
+	top: -12px;
+	right: -12px;
+	color: #27374D;
+	background: #fff;
+	border: 1.5px solid #e0e6ed;
+	padding: 0;
+	cursor: pointer;
+	opacity: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	width: 28px;
+	height: 28px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	z-index: 1001;
+	transition: background 0.2s, box-shadow 0.2s;
+}
+
+.close-notification:hover {
+	background: #f3f6fa;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.close-notification i {
+	font-size: 18px;
+	color: #27374D;
+}
+
+/* Only show on mobile devices */
+@media (min-width: 768px) {
+	.pwa-install-notification {
+		display: none;
+	}
+}
+
+@media (max-width: 400px) {
+	.pwa-install-notification {
+		width: calc(100% - 32px);
+		margin: 0 16px;
+		right: -100%;
+	}
+	.pwa-install-notification.active {
+		right: 0;
+	}
+	.notification-content {
+		padding: 14px;
+		gap: 12px;
+	}
+	#pwa-install-button {
+		width: 100%;
+	}
 }

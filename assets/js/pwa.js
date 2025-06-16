@@ -1,10 +1,11 @@
 // Store the deferred prompt for later use
-var deferredPrompt;
+let deferredPrompt;
+let autoHideTimeout;
 
 if ("serviceWorker" in navigator) {
 	window.addEventListener("load", () => {
 		navigator.serviceWorker
-			.register("sw.js")
+			.register("./sw.js")
 			.then((reg) => {
 				console.log("Service Worker registered with scope:", reg.scope);
 			})
@@ -14,45 +15,71 @@ if ("serviceWorker" in navigator) {
 	});
 }
 
+// Function to show notification
+function showInstallNotification() {
+	const notification = document.querySelector(".pwa-install-notification");
+	if (notification) {
+		notification.style.display = "block";
+		// Trigger reflow before adding active class for smooth animation
+		notification.offsetHeight;
+		notification.classList.add("active");
+		// Auto-hide after 3 seconds
+		clearTimeout(autoHideTimeout);
+		autoHideTimeout = setTimeout(() => {
+			hideInstallNotification();
+		}, 3000);
+	}
+}
+
+// Function to hide notification
+function hideInstallNotification() {
+	const notification = document.querySelector(".pwa-install-notification");
+	if (notification) {
+		notification.classList.remove("active");
+		// Remove display:block after animation completes
+		setTimeout(() => {
+			notification.style.display = "none";
+		}, 300); // Match transition duration from CSS
+		clearTimeout(autoHideTimeout);
+	}
+}
+
 // Listen for the beforeinstallprompt event
 window.addEventListener("beforeinstallprompt", (e) => {
-	console.log("beforeinstallprompt event fired");
-	// Prevent Chrome 67 and earlier from automatically showing the prompt
-	e.preventDefault();
-
 	// Store the event for later use
 	deferredPrompt = e;
 
-	// Show install button or notification to user
-	const installButton = document.getElementById("pwa-install-button");
+	// Show the notification on mobile only
+	if (window.innerWidth < 768) {
+		showInstallNotification();
+	}
+});
 
-	if (!installButton) {
-		console.warn("PWA install button not found");
-		return;
+// Handle install button click
+document.addEventListener("DOMContentLoaded", () => {
+	const installButton = document.getElementById("pwa-install-button");
+	const closeButton = document.querySelector(".close-notification");
+
+	if (installButton) {
+		installButton.addEventListener("click", async () => {
+			// Hide the notification
+			hideInstallNotification();
+
+			// Show the install prompt
+			if (deferredPrompt) {
+				deferredPrompt.prompt();
+				const { outcome } = await deferredPrompt.userChoice;
+
+				console.log(`User ${outcome === "accepted" ? "accepted" : "dismissed"} the install prompt`);
+				deferredPrompt = null;
+			}
+		});
 	}
 
-	// Show the prompt when user clicks the button
-	installButton.addEventListener("click", async () => {
-		console.log("Install button clicked");
-
-		if (!deferredPrompt) {
-			console.error("No deferred prompt available");
-			return;
-		}
-
-		// Show the install prompt
-		try {
-			await deferredPrompt.prompt();
-			console.log("Install prompt shown");
-
-			// Wait for the user to respond to the prompt
-			const { outcome } = await deferredPrompt.userChoice;
-			console.log(`User response to the install prompt: ${outcome}`);
-
-			// Clear the deferred prompt
-			deferredPrompt = null;
-		} catch (error) {
-			console.error("Error showing install prompt:", error);
-		}
-	});
+	// Handle close button click
+	if (closeButton) {
+		closeButton.addEventListener("click", () => {
+			hideInstallNotification();
+		});
+	}
 });
