@@ -21,9 +21,9 @@ self.addEventListener("activate", (event) => {
 
 	//removing unwanted caches
 	event.waitUntil(
-		caches.keys().then((cacheName) => {
+		caches.keys().then((cacheKeys) => {
 			return Promise.all(
-				cacheName.map((cache) => {
+				cacheKeys.map((cache) => {
 					if (cache !== cacheName) {
 						console.log("Service worker: clear old caches");
 						return caches.delete(cache);
